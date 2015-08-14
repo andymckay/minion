@@ -1,0 +1,16 @@
+frontend:
+  image: minion/frontend
+  command: supervisord -n -c etc/docker.supervisor.conf
+  links:
+    - backend:backend
+  volumes:
+    - ../minion-frontend:/srv/minion
+  ports:
+    - 80:4000
+
+
+backend:
+  image: minion/backend
+  command: supervisord -n -c etc/docker.supervisor.conf
+  volumes:
+    - ../minion-backend:/srv/minion

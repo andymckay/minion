@@ -24,6 +24,24 @@ The following projects are optional plugins for minion that add more functionali
 
 This project contains a script that will check out the above projects. See below in the setup instructions.
 
+Setting up with docker
+----------------------
+
+Install docker and docker-compose: https://www.docker.com/
+
+Checkout the repositories:
+
+    $ git clone https://github.com/mozilla/minion
+    $ git clone https://github.com/mozilla/minion-frontend
+    $ git clone https://github.com/mozilla/minion-backend
+
+Run the docker instance:
+
+    $ cd minion
+    $ docker-compose up -d
+
+Access the server at the docker VM IP, eg: http://[docker ip]/.
+
 Setting up a development environment
 ------------------------------------
 
@@ -48,7 +66,7 @@ If you work on Fedora 19, install the following packages:
     $ sudo yum groupinstall 'Development Tools'
     $ sudo yum install  python-devel python-virtualenv mongodb-server mongodb-devel rabbitmq-server libcurl-devel openssl-devel
     $ sudo yum install nmap skipfish
-    
+
 You can make Minion ready for development by following these steps:
 
     $ git clone https://github.com/mozilla/minion
@@ -112,4 +130,3 @@ License
 -------
 This software is licensed under the MPL License. For more
 information, read the file ``LICENSE``.
-
